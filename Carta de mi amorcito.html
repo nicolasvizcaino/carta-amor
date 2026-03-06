@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Mi Amor ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* pantalla inicial */
+
+#inicio{
+    color:white;
+}
+
+h1{
+    font-size:50px;
+}
+
+button{
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4b7d;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+/* carta */
+
+#carta{
+    display:none;
+    background:white;
+    width:80%;
+    max-width:700px;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    animation:aparecer 1s ease;
+}
+
+@keyframes aparecer{
+    from{opacity:0; transform:scale(0.8);}
+    to{opacity:1; transform:scale(1);}
+}
+
+/* texto carta */
+
+.texto{
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* imagenes */
+
+.galeria{
+    margin-top:30px;
+}
+
+.galeria img{
+    width:150px;
+    border-radius:15px;
+    margin:10px;
+    transition:0.4s;
+}
+
+.galeria img:hover{
+    transform:scale(1.1);
+}
+
+/* corazones */
+
+.corazon{
+    position:absolute;
+    color:red;
+    font-size:20px;
+    animation:flotar 6s linear infinite;
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-800px);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="inicio">
+
+<h1>❤️ Felices 2 años mi amor ❤️</h1>
+
+<p>Hice algo especial para ti</p>
+
+<button onclick="abrirCarta()">Abrir Carta 💌</button>
+
+</div>
+
+
+<div id="carta">
+
+<h2>Para Ti ❤️</h2>
+
+<div class="texto">
+
+<!-- ================================================= -->
+<!-- AQUI DEBES ESCRIBIR TU CARTA PARA TU NOVIA -->
+<!-- ESCRIBE TU TEXTO ENTRE ESTOS PARRAFOS -->
+<!-- ================================================= -->
+
+<p>
+Mi maramonshito ❤️
+
+Felices 2 años, mi vidita.
+La verdad todavía me cuesta creer que ya haya pasado tanto tiempo. Siento que fue ayer cuando te llevé esos baloncitos de chocolate para pedirte que fueras mi novia. Desde ese momento mi vida cambió muchísimo, porque llegaste tú a hacerla más bonita.
+
+Quiero darte las gracias por todo este tiempo, por cada momento, por cada risa, por cada abrazo y también por estar conmigo incluso cuando las cosas no son tan fáciles. Sé que a veces tenemos problemas o diferencias, pero también sé que siempre vamos a encontrar la manera de superarlos, porque lo que tenemos vale demasiado y quiero que sigamos juntos por mucho más tiempo.
+
+También quiero pedirte perdón por las veces que he sido tan cansón o tan tocado :(, sé que a veces puedo ser así, pero créeme que siempre estoy intentando ser mejor para ti y para nuestra relación.
+
+Quiero que sepas que estoy trabajando fuerte para sacar nuestra relación adelante, para que en el futuro no tengamos que preocuparnos por el dinero y podamos vivir tranquilos, cumplir sueños y construir muchas cosas juntos. Porque sí, yo sí me imagino un futuro contigo… más adelante casarme contigo, formar una familia y hasta tener un hijo contigo.
+
+Me encanta todo lo que hacemos juntos: dormir contigo, comer juntos, ver películas, hablar de cualquier cosa o simplemente estar a tu lado. Son cosas simples, pero contigo se sienten especiales.
+
+Quiero que siempre recuerdes algo: voy a estar para ti en las buenas y en las malas. Cuando estés feliz, cuando estés triste, cuando tengas miedo o cuando sientas que todo está difícil. No estás sola, porque aquí estoy yo para caminar contigo.
+
+Gracias por ser como eres conmigo, por tu cariño, por tu paciencia y por todo el amor que me das. Espero que estos 2 años sean solo el comienzo de muchos más momentos, más recuerdos y más historias juntos.
+
+Te amo muchísimo, mi vidita.
+Felices 2 años, mi maramonshito. 💖
+
+</p>
+
+<p>
+Puedes escribir varias partes de tu mensaje aqui.
+</p>
+
+<!-- ================================================= -->
+
+</div>
+
+
+<div class="galeria">
+
+<!-- CAMBIA ESTAS IMAGENES POR FOTOS DE USTEDES -->
+
+<img src="mamorcito.jpeg">
+<img src="Osos.avif">
+<img src="mamorcito1.jpeg">
+
+
+</div>
+
+</div>
+
+
+<script>
+
+function abrirCarta(){
+
+document.getElementById("inicio").style.display="none";
+document.getElementById("carta").style.display="block";
+
+crearCorazones();
+
+}
+
+/* efecto corazones */
+
+function crearCorazones(){
+
+setInterval(function(){
+
+let corazon = document.createElement("div");
+
+corazon.innerHTML="❤️";
+corazon.classList.add("corazon");
+
+corazon.style.left=Math.random()*100+"vw";
+corazon.style.fontSize=(Math.random()*20+10)+"px";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+corazon.remove();
+},6000);
+
+},300);
+
+}
+
+</script>
+
+</body>
+</html>
